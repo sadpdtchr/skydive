@@ -135,6 +135,7 @@ analyzer:
         - configmap
         - container
         - cronjob
+        - daemonset
         - deployment
         - endpoints
         - ingress
@@ -151,6 +152,8 @@ analyzer:
         - service
         - statefulset
         - storageclass
+
+      # cluster_name: "MyClusterName"
 
     istio:
       # specify the path of istio configuration YAML file.
@@ -198,8 +201,9 @@ agent:
   topology:
     # Probes used to capture topology information like interfaces,
     # bridges, namespaces, etc...
-    # Available: ovsdb, docker, neutron, opencontrail, socketinfo, lxd, lldp, libvirt, runc
+    # Available: blockdev, ovsdb, docker, neutron, opencontrail, socketinfo, lxd, lldp, libvirt, runc
     probes:
+      # - blockdev
       # - ovsdb
       # - docker
       # - neutron

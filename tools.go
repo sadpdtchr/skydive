@@ -23,15 +23,17 @@ package main
 
 import (
 	_ "git.fd.io/govpp.git/cmd/binapi-generator"
+	_ "github.com/aktau/github-release"
 	_ "github.com/davecgh/go-spew/spew"
 	_ "github.com/go-swagger/go-swagger/cmd/swagger"
-	_ "github.com/gogo/protobuf"
+	_ "github.com/gogo/protobuf/protoc-gen-gogofaster"
 	_ "github.com/golang/protobuf/protoc-gen-go"
-	_ "github.com/golangci/golangci-lint"
+	_ "github.com/golangci/golangci-lint/cmd/golangci-lint"
 	_ "github.com/gomatic/renderizer"
 	_ "github.com/jteeuwen/go-bindata"
 	_ "github.com/mailru/easyjson/easyjson"
 	_ "github.com/mattn/goveralls"
 	_ "github.com/t-yuki/gocover-cobertura"
+	_ "github.com/tebeka/go2xunit"
 	_ "golang.org/x/tools/go/loader"
 )

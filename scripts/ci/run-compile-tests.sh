@@ -16,7 +16,7 @@ git clone https://github.com/collectd/collectd.git /tmp/collectd
 rm -rf ../skydive-collectd-plugin
 git clone https://github.com/skydive-project/skydive-collectd-plugin ../skydive-collectd-plugin
 echo "replace github.com/skydive-project/skydive => ../skydive" >> ../skydive-collectd-plugin/go.mod
-COLLECTD_SRC=/tmp/collectd make -C ../skydive-collectd-plugin
+COLLECTD_SRC=/tmp/collectd SKYDIVE_GO_MOD=${GOPATH}/src/github.com/skydive-project/skydive/go.mod make -C ../skydive-collectd-plugin
 
 # Compile all contribs
 make contribs
@@ -48,7 +48,8 @@ make test.functionals.compile TAGS=${TAGS} WITH_NEUTRON=true WITH_SELENIUM=true 
     WITH_SCALE=true WITH_EBPF=true WITH_EBPF_DOCKER_BUILDER=true WITH_VPP=true WITH_K8S=true \
     WITH_ISTIO=true WITH_HELM=true
 
-make clean
-
 # Compile static
 make static
+
+# Check repository is clean
+make check
